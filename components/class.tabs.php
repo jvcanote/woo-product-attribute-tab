@@ -54,6 +54,7 @@ class Tabs {
                 $terms = wp_get_post_terms($product->id, $attribute['name']);
                 foreach ($terms as $term) {
                     $tab_content = get_term_meta($term->term_id, Meta::instance()->get_meta_key(), true);
+                    $tab_content = apply_filters('woocommerce_product_attribute_tab_content_term', "<p>{$tab_content}</p>", $term, $attribute);
                     if ($tab_content) {
                         $contents[] = $tab_content;
                     }
@@ -64,9 +65,7 @@ class Tabs {
                         'title'    => apply_filters('woocommerce_product_attribute_tab_title', wc_attribute_label($attribute['name'], $product), $product, $attribute),
                         'priority' => apply_filters('woocommerce_product_attribute_tab_priority', 20 + $attribute['position'], $product, $attribute),
                         'callback' => array($this, 'render_tab'),
-                        'content'  => implode('', array_map(function($content) {
-                            return '<p>' . $content . '</p>';
-                        }, $contents))
+                        'content'  => implode('', $contents))
                     );
                 }
             }

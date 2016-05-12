@@ -47,12 +47,12 @@ Firstly, you'll have to remove the hook that registers the new product tab descr
     // Remove the hook that registers the new product tab description field
     remove_action('init', array(MJJ\WooProductAttributeTab\Meta::instance(), 'init'));
 
-Secondly you'll have to tell the plugin to use the default description meta field instead; add the following code to do so:
+Secondly you'll have to replace the tab content for every term with the default description field instead; add the following code to do so:
 
     // Use default description meta field for product attribute tab
-    add_filter('woocommerce_product_attribute_meta_key', function($key) {
-        return '';
-    });
+    add_filter('woocommerce_product_attribute_tab_content_term', function($content, $term, $taxonomy) {
+        return '<p>' . term_description($term->term_id, $taxonomy['name']) . '</p>';
+    }, 10, 3);
 
 ### How can I change the tab title? ###
 The default name of the product tab is the name of the product attribute taxonomy, hence you can change the attribute taxonomy title to change the tab title. If you wish to rename the tab title independently of the attribute taxonomy title, you can use the following code snippet example in your theme, e.g. `functions.php`:
