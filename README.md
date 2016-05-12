@@ -69,18 +69,17 @@ The above example would rename the product attribute tab title for the product a
 
 ## Screenshots ##
 
-### 1. The extra product tab description field in the product attribute edit screen. ###
-![1. The extra product tab description field in the product attribute edit screen.](http://ps.w.org/product-attribute-tab-for-woocommerce/assets/screenshot-1.png)
-
-### 2. Two product attribute descriptions displayed at once on the product detail page. ###
-![2. Two product attribute descriptions displayed at once on the product detail page.](http://ps.w.org/product-attribute-tab-for-woocommerce/assets/screenshot-2.png)
-
+1. The extra product tab description field in the product attribute edit screen.
+ ![The extra product tab description field in the product attribute edit screen.](assets/screenshot-1.png)
+1. Two product attribute descriptions displayed at once on the product detail page.
+ ![Two product attribute descriptions displayed at once on the product detail page.](assets/screenshot-2.png)
 
 ## Changelog ##
 
 ### 0.0.1 ###
+
 * First stable release.
 
-## Upgrade Notice ## 
+## Upgrade Notice ##
 
-None yet.
+* None yet.
