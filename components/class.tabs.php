@@ -65,7 +65,7 @@ class Tabs {
                         'title'    => apply_filters('woocommerce_product_attribute_tab_title', wc_attribute_label($attribute['name'], $product), $product, $attribute),
                         'priority' => apply_filters('woocommerce_product_attribute_tab_priority', 20 + $attribute['position'], $product, $attribute),
                         'callback' => array($this, 'render_tab'),
-                        'content'  => implode('', $contents))
+                        'content'  => implode('', $contents)
                     );
                 }
             }
